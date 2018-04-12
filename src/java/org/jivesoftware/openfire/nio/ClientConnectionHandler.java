@@ -22,6 +22,7 @@ import org.jivesoftware.openfire.Connection;
 import org.jivesoftware.openfire.XMPPServer;
 import org.jivesoftware.openfire.handler.IQPingHandler;
 import org.jivesoftware.openfire.net.ClientStanzaHandler;
+import org.jivesoftware.openfire.net.MQClientStanzaHandler;
 import org.jivesoftware.openfire.net.StanzaHandler;
 import org.jivesoftware.openfire.session.ConnectionSettings;
 import org.jivesoftware.openfire.spi.ConnectionConfiguration;
@@ -53,7 +54,8 @@ public class ClientConnectionHandler extends ConnectionHandler {
 
     @Override
     StanzaHandler createStanzaHandler(NIOConnection connection) {
-        return new ClientStanzaHandler(XMPPServer.getInstance().getPacketRouter(), connection);
+//        return new ClientStanzaHandler(XMPPServer.getInstance().getPacketRouter(), connection);
+    	return new MQClientStanzaHandler(XMPPServer.getInstance().getPacketRouter(), connection);
     }
 
     @Override
