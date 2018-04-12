@@ -588,6 +588,8 @@ public class XMPPServer {
         loadModule(PacketRouterImpl.class.getName());
         loadModule(IQRouter.class.getName());
         loadModule(MessageRouter.class.getName());
+        // load MQ message router 
+        loadModule(MQMessageRouter.class.getName());
         loadModule(PresenceRouter.class.getName());
         loadModule(MulticastRouter.class.getName());
         loadModule(PacketTransporterImpl.class.getName());
